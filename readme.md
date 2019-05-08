@@ -9,16 +9,25 @@ This is a simple empty [Corona](https://coronalabs.com) app showing how to start
   >
 </p>
 
-## content
+## Startup a game
 
-- 3 screens: home, playground and leaderboard
-- displaying few `Buttons` and `Texts`
-- you may find a plugin to create user profiles, using the [NamePicker](https://github.com/chrisdugne/cherry/blob/master/cherry/screens/name-picker.lua) plugged by default.
-
-## deps
+```shell
+> git clone https://github.com/chrisdugne/cherry-starter
+> mv cherry-starter YourGame
+> cd YourGame
+> git remote remove origin
+> git remote add origin https://github.com/youraccount/yourgame
+```
 
 You have to clone Cherry and symlink `/Cherry/cherry` in order to run this starter (please refer to Cherry [documentation](https://github.com/chrisdugne/cherry#installation))
 
 ```shell
-├── cherry -> ../Cherry/cherry
+> git clone https://github.com/chrisdugne/cherry
+> ln -s ../Cherry/cherry cherry
 ```
+
+## Content
+
+- 3 screens: home, playground and leaderboard
+- displaying few `Buttons` and `Texts`
+- you may find a plugin to create user profiles, using the [NamePicker](https://github.com/chrisdugne/cherry/blob/master/cherry/screens/name-picker.lua) plugged by default.
