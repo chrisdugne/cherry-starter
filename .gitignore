@@ -1,2 +1,4 @@
-assets/levels/level-editor/level-editor.json
-.build
+# xcode
+xcuserdata
+xcshareddata
+contents.xcworkspacedata

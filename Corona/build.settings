@@ -1,0 +1,25 @@
+-- Supported values for orientation:
+-- portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+settings = {
+  orientation = {
+    default = 'portrait',
+    supported = {'portrait', 'portraitUpsideDown'}
+  },
+  iphone = {},
+  plugins = {},
+  android = {
+    useGoogleServicesJson = false,
+    usesPermissions = {
+      'android.permission.INTERNET'
+    }
+  },
+  excludeFiles = {
+    all = {
+      'docs/**',
+      'assets/brand/**',
+      'assets/drafts/**'
+    },
+    iphone = {'Icon-*dpi.png'},
+    android = {'Icon.png', 'Icon-Small-*.png', 'Icon*@2x.png'}
+  }
+}

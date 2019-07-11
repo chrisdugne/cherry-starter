@@ -23,11 +23,12 @@ You have to clone Cherry and symlink `/Cherry/cherry` in order to run this start
 
 ```shell
 > git clone https://github.com/chrisdugne/cherry
-> ln -s ../Cherry/cherry cherry
+> cd Corona
+> ln -s ../../Cherry/cherry cherry
 ```
 
 ## Content
 
 - 3 screens: home, playground and leaderboard
 - displaying few `Buttons` and `Texts`
-- you may find a plugin to create user profiles, using the [NamePicker](https://github.com/chrisdugne/cherry/blob/master/cherry/screens/name-picker.lua) plugged by default.
+- a plugin to create user profiles, using the [NamePicker](https://github.com/chrisdugne/cherry/blob/master/cherry/screens/name-picker.lua) plugged by default.
