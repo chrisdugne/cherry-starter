@@ -5,6 +5,7 @@ settings = {
     default = 'portrait',
     supported = {'portrait', 'portraitUpsideDown'}
   },
+  splashScreen = {enable = false},
   iphone = {},
   plugins = {},
   android = {
