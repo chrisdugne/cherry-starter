@@ -18,4 +18,4 @@ install:
   - luarocks install luacheck
 
 script:
-  - luacheck src main.lua
+  - luacheck Corona/src Corona/main.lua
