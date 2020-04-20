@@ -6,17 +6,20 @@ local game = require 'src.extensions.game'
 
 App:start(
   {
-    name = 'Startup',
+    -----------------------------------------
+    name = 'Startup demo',
     version = '0.0.1',
+    -----------------------------------------
+    -- 'production', 'development', 'editor'
+    ENV = 'production',
+    -----------------------------------------
     IOS_ID = '',
     ANALYTICS_TRACKING_ID = '',
     API_GATEWAY_URL = '',
     API_GATEWAY_KEY = '',
     -----------------------------------------
-    -- 'production', 'development', 'editor'
-    ENV = 'production',
-    -----------------------------------------
     showHeadphonesScreen = false,
+    useNamePicker = true,
     -----------------------------------------
     background = {
       color = '#3a3f46'
@@ -31,6 +34,7 @@ App:start(
     fonts = {
       default = 'cherry/assets/PatrickHand-Regular.ttf'
     },
+    -----------------------------------------
     scoreFields = {
       {
         name = 'points',
@@ -39,6 +43,7 @@ App:start(
         scale = 0.4
       }
     },
+    -----------------------------------------
     extension = {
       game = game
     }
