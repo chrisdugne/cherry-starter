@@ -29,7 +29,7 @@ function Game:onRun()
       parent = App.hud,
       x = W / 2,
       y = H / 2,
-      value = 'Playground',
+      value = 'Game is running',
       fontSize = 80,
       font = _G.FONTS.default,
       color = App.colors.text

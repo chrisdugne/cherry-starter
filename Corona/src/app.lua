@@ -25,7 +25,8 @@ App:start(
       color = '#3a3f46'
     },
     screens = {
-      HOME = 'home.scene'
+      HOME = 'home.scene',
+      SCREEN1 = 'screen1.scene'
     },
     colors = {
       text = '#ededed'

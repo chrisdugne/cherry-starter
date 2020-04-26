@@ -4,7 +4,6 @@ local composer = require 'composer'
 local _ = require 'cherry.libs.underscore'
 local animation = require 'cherry.libs.animation'
 local Button = require 'cherry.components.button'
-local Options = require 'cherry.components.options'
 local Text = require 'cherry.components.text'
 
 --------------------------------------------------------------------------------
@@ -13,20 +12,31 @@ local scene = composer.newScene()
 
 --------------------------------------------------------------------------------
 
-local createButton = function(options)
-  return Button:create(
+function scene:create(event)
+  self.title =
+    Text:create(
     {
-      parent = options.parent,
+      parent = self.view,
+      value = 'Screen1',
+      x = W / 2,
+      y = H / 5
+    }
+  )
+
+  self.backButton =
+    Button:create(
+    {
+      parent = self.view,
       bg = false,
       text = {
-        value = options.text,
+        value = 'back',
         fontSize = 90,
         color = App.colors.text
       },
-      x = options.x,
-      y = options.y,
+      x = W / 2,
+      y = H / 2,
       action = function()
-        Router:open(options.screen)
+        Router:open(App.screens.HOME)
       end
     }
   )
@@ -34,46 +44,8 @@ end
 
 --------------------------------------------------------------------------------
 
-function scene:create(event)
-  Options:create(self.view)
-
-  self.title =
-    Text:create(
-    {
-      parent = self.view,
-      value = 'Home',
-      x = W / 2,
-      y = H / 5
-    }
-  )
-
-  self.startButton =
-    createButton(
-    {
-      parent = self.view,
-      text = 'Playground',
-      x = W / 2,
-      y = H / 2,
-      screen = App.screens.PLAYGROUND
-    }
-  )
-
-  self.startButton =
-    createButton(
-    {
-      parent = self.view,
-      text = 'Screen1',
-      x = W / 2,
-      y = H / 2 + 100,
-      screen = App.screens.SCREEN1
-    }
-  )
-end
-
---------------------------------------------------------------------------------
-
 function scene:resetView()
-  self.startButton.alpha = 1
+  self.backButton.alpha = 1
 end
 
 --------------------------------------------------------------------------------
@@ -82,11 +54,8 @@ function scene:show(event)
   if (event.phase == 'did') then
     self:resetView()
 
-    animation.bounce(Options.toggleActionsButton, {scaleTo = .7})
-    animation.bounce(Options.leaderboardButton, {scaleTo = .7})
-
     transition.from(
-      self.startButton,
+      self.backButton,
       {
         alpha = 0
       }
@@ -99,7 +68,7 @@ end
 function scene:hide(event)
   if (event.phase == 'did') then
     transition.to(
-      self.startButton,
+      self.backButton,
       {
         alpha = 0
       }
