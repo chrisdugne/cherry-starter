@@ -2,7 +2,7 @@
 
 local composer = require 'composer'
 local _ = require 'cherry.libs.underscore'
-local animation = require 'cherry.libs.animation'
+local colorize = require 'cherry.libs.colorize'
 local Button = require 'cherry.components.button'
 local Text = require 'cherry.components.text'
 
@@ -13,6 +13,9 @@ local scene = composer.newScene()
 --------------------------------------------------------------------------------
 
 function scene:create(event)
+  self.bg = display.newRect(self.view, W / 2, H / 2, W, H)
+  self.bg:setFillColor(colorize('#123'))
+
   self.title =
     Text:create(
     {
@@ -45,6 +48,7 @@ end
 --------------------------------------------------------------------------------
 
 function scene:resetView()
+  self.bg.alpha = 1
   self.backButton.alpha = 1
 end
 
@@ -60,6 +64,13 @@ function scene:show(event)
         alpha = 0
       }
     )
+
+    transition.from(
+      self.bg,
+      {
+        alpha = 0
+      }
+    )
   end
 end
 
@@ -69,6 +80,13 @@ function scene:hide(event)
   if (event.phase == 'did') then
     transition.to(
       self.backButton,
+      {
+        alpha = 0
+      }
+    )
+
+    transition.to(
+      self.bg,
       {
         alpha = 0
       }
