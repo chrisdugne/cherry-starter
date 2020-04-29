@@ -8,19 +8,19 @@ local showScore = require 'cherry.core.actions.show-score'
 
 --------------------------------------------------------------------------------
 
-local Game = {}
+local GameExtension = {}
 
 --------------------------------------------------------------------------------
 
-function Game:initialState()
+function GameExtension:initialState()
   return _.extend({})
 end
 
-function Game:resetState()
+function GameExtension:resetState()
   self.state = self:initialState()
 end
 
-function Game:resetElements()
+function GameExtension:resetElements()
   if (self.elements.gameRect) then
     display.remove(self.elements.gameRect)
   end
@@ -33,7 +33,7 @@ end
 
 --------------------------------------------------------------------------------
 
-function Game:onRun()
+function GameExtension:onRun()
   Text:create(
     {
       parent = App.hud,
@@ -89,14 +89,14 @@ end
 
 --------------------------------------------------------------------------------
 
-function Game:onShowScore()
+function GameExtension:onShowScore()
   display.remove(self.showScoreButton)
   self:removeCamera()
 end
 
-function Game:onExit(noScore)
+function GameExtension:onExit(noScore)
 end
 
 --------------------------------------------------------------------------------
 
-return Game
+return GameExtension

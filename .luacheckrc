@@ -25,12 +25,8 @@ stds.corona = {
 stds.cherry = {
   globals = {
     'App',
-    'Camera',
-    'Effects',
-    'Game',
     'math',
     'Router',
-    'Sound',
     'string',
     'table',
     'unpack',
