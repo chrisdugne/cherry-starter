@@ -3,6 +3,7 @@
 local composer = require 'composer'
 local _ = require 'cherry.libs.underscore'
 local animation = require 'cherry.libs.animation'
+local colorize = require 'cherry.libs.colorize'
 local Button = require 'cherry.components.button'
 local Options = require 'cherry.components.options'
 local Text = require 'cherry.components.text'
@@ -58,7 +59,7 @@ function scene:create(event)
     }
   )
 
-  self.startButton =
+  self.screen1Button =
     createButton(
     {
       parent = self.view,
@@ -70,12 +71,35 @@ function scene:create(event)
   )
 
   --------------------
+
+  self.transversalBackRect =
+    display.newRect(App.transversalBackLayer, 30, 30, W / 2, H / 3)
+  self.transversalBackRect:setFillColor(colorize('#945'))
+  self.transversalBackRect.anchorX = 0
+  self.transversalBackRect.anchorY = 0
+
+  self.currentViewRect = display.newRect(self.view, 60, 60, W / 2, H / 3)
+  self.currentViewRect:setFillColor(colorize('#fd0'))
+  self.currentViewRect.anchorX = 0
+  self.currentViewRect.anchorY = 0
+
+  self.transversalFrontRect =
+    display.newRect(App.transversalFrontLayer, 90, 90, W / 2, H / 3)
+  self.transversalFrontRect:setFillColor(colorize('#06f'))
+  self.transversalFrontRect.anchorX = 0
+  self.transversalFrontRect.anchorY = 0
 end
 
 --------------------------------------------------------------------------------
 
 function scene:resetView()
   self.startButton.alpha = 1
+  self.screen1Button.alpha = 1
+
+  self.hudRect = display.newRect(App.hud, 120, 120, W / 2, H / 3)
+  self.hudRect:setFillColor(colorize('#0b0'))
+  self.hudRect.anchorX = 0
+  self.hudRect.anchorY = 0
 end
 
 --------------------------------------------------------------------------------
@@ -89,6 +113,22 @@ function scene:show(event)
 
     transition.from(
       self.startButton,
+      {
+        delay = 150,
+        alpha = 0
+      }
+    )
+
+    transition.from(
+      self.screen1Button,
+      {
+        delay = 300,
+        alpha = 0
+      }
+    )
+
+    transition.from(
+      self.hudRect,
       {
         alpha = 0
       }

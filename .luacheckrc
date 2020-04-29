@@ -26,7 +26,6 @@ stds.cherry = {
   globals = {
     'App',
     'Camera',
-    'CBE',
     'Effects',
     'Game',
     'math',
