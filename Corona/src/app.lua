@@ -4,7 +4,7 @@ local game = require 'src.extensions.game'
 
 --------------------------------------------------------------------------------
 
-App:start(
+App.start(
   {
     -----------------------------------------
     name = 'Cherry Starter',
