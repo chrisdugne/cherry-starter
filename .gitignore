@@ -2,3 +2,6 @@
 xcuserdata
 xcshareddata
 contents.xcworkspacedata
+
+# osx
+*.DS_Store
