@@ -94,7 +94,7 @@ function GameExtension:onShowScore()
   self:removeCamera()
 end
 
-function GameExtension:onExit(noScore)
+function GameExtension:onStop(noScore)
 end
 
 --------------------------------------------------------------------------------

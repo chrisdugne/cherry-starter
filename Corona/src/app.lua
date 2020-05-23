@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 
+local env = require 'src.env'
 local game = require 'src.extensions.game'
 
 --------------------------------------------------------------------------------
@@ -10,29 +11,30 @@ App.start(
     name = 'Cherry Starter',
     version = '0.0.1',
     -----------------------------------------
-    -- 'production', 'development', 'editor'
-    ENV = 'production',
+    env = env.DEVELOPMENT,
     -----------------------------------------
     showHeadphonesScreen = false,
     useNamePicker = true,
     -----------------------------------------
-    background = {
-      color = '#3a3f46'
+    extension = {
+      game = game
     },
+    -----------------------------------------
     screens = {
       HOME = 'home.scene',
       SCREEN1 = 'screen1.scene'
     },
+    -----------------------------------------
+    background = {
+      color = '#3a3f46'
+    },
+    -----------------------------------------
     colors = {
-      text = '#dd00dd'
+      text = '#9e6e98'
     },
     globals = {},
     fonts = {
       default = 'cherry/assets/PatrickHand-Regular.ttf'
-    },
-    -----------------------------------------
-    extension = {
-      game = game
     }
   }
 )
