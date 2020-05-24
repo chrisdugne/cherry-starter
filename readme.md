@@ -27,6 +27,12 @@ You have to clone Cherry and symlink `/Cherry/cherry` in order to run this start
 > ln -s ../../Cherry/cherry cherry
 ```
 
+cleanup history to have a fresh start commit on your new game:
+
+```sh
+git rebase -i --root
+```
+
 ## Content
 
 - 3 screens: home, playground and leaderboard
