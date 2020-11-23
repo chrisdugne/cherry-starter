@@ -32,9 +32,11 @@ App.start(
     colors = {
       text = '#9e6e98'
     },
-    globals = {},
     fonts = {
       default = 'cherry/assets/PatrickHand-Regular.ttf'
-    }
+    },
+    -----------------------------------------
+    ANY_GLOBAL_VAR = 'plop' -- access App.ANY_GLOBAL_VAR anywhere
+    -----------------------------------------
   }
 )
